@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang ="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>a1flashcards</title>
+    <link rel="stylesheet" href="style.css"> <!--bağlanan css dosyası-->
+</head>
+
+<body>
+    <h1>oxford 3000 word en-tr</h1> <!--sayfanın başlığı-->
+    <div class="card" id="flashcard">
+        <p id="card-content">yükleniyor...</p>
+        <div class="buttons"> <!--butonları şekillendirmek için-->
+            <button onclick="showPrevious()">önceki</button>
+            <button onclick="toggleAnswer()">cevap</button>
+            <button onclick="showNext()">sonraki</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
