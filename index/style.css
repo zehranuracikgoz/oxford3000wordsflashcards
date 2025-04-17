@@ -1,0 +1,45 @@
+h1  {
+    margin-bottom: 50px; /* başlığın altına boşluk */
+    text-align: center; /* başlığın ortalanması */
+}
+body {
+    margin: 0;
+    padding-top: 50px; /* üst boşluk */
+    font-family:Arial, Helvetica, sans-serif;
+    background-color:antiquewhite; /* arka plan rengi */
+}
+.card { /* kart tasarımı*/
+    background-color:rgb(175, 159, 139); /* arka plan rengi*/
+    font-size: 40px;
+    padding: 80px; /* iç boşluk */
+    border-radius: 30px; /* kenarları yuvarlatılmış */
+    box-shadow: 0 7px 12px rgba(0,0,0,0.1); /* gölgeli*/
+    text-align: center;
+    width: 500px; /*genişliği */
+    margin: 0 auto; /*üst alt boşluk 0(hiç boşluk),, sağ ve sol kenar boşlukları otomatik ayarlanıyor*/
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+button  {
+    padding:25px; /* butonun içindeki yazıyla kenarları arasındaki boşluk. */
+    border: none; /*buton kenarlarının kaldırılması. */
+    border-radius: 10px; /* köşelerin yuvarlaklaştırılması */
+    background-color:rgb(86, 71, 71); /*butonun arka plan rengi */
+    color: white; /* yazı rengi */
+    cursor:pointer; /*imlecin el şekline dönüşmesi */ 
+    font-size: 30px; /* buton yazısının boyutu */
+    text-align: center; /* buton içindeki metnin ortalanması */
+}
+.buttons    { /*butonları kapsayan div*/
+    margin-top:80px; /* üst kısımla bir önceki arası boşluk */
+    display:flex ; /* butonların yan yana sıralanması */
+    justify-content: space-between; /* diğer öğelerle arasında eşit boşluk bırakır.*/
+    position:relative;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+button:hover    { /*kullanıcı fareyi butonun üzerine getirince */
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px black;
+    z-index: 10;
+}
+
