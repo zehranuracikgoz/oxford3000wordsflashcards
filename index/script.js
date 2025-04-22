@@ -1,47 +1,44 @@
-let cards = []; //tüm flashcardların olduğu dizi
-    let currentCard = 0; //ilk flashcard
-    let showingAnswer = false; //ilk başta soru gösteriliyor.
+let cards = []; 
+    let currentCard = 0; 
+    let showingAnswer = false; 
 
 function updateCard(){
-    if(cards.length==0) return; //hiçbir kart yoksa bitirilir.
+    if(cards.length==0) return; 
     const content = showingAnswer
         ? cards[currentCard].tr
-        : cards[currentCard].en; //soru gözüküyorsa soru kartı gözükmüyorsa cevap kartı açık.
-    document.getElementById("card-content").textContent = content; //card-content, content ile değiştirilir.
+        : cards[currentCard].en; 
+    document.getElementById("card-content").textContent = content; 
 }
 
-function toggleAnswer(){ //onclick özelliği ile cevabı gösterip
+function toggleAnswer(){ 
     showingAnswer = !showingAnswer;
     updateCard();
 }
 
 function showPrevious(){
-    if (currentCard>0){ //eğer ilk karttaysa bir önceki kartı göstermiyor.
+    if (currentCard>0){ 
         currentCard--;
-        showingAnswer = false; //geri döndüğümüz zaman cevabın gözükmemesi.
-        updateCard(); //yeni kart.
+        showingAnswer = false; 
+        updateCard(); 
     }
 }
 
 function showNext(){
-    if(currentCard<cards.length-1){ //şu anki kart son kart değilse.
+    if(currentCard<cards.length-1){ 
         currentCard++;
         showingAnswer = false;
         updateCard(); 
     }           
 }
 
-//json dosyasini yukleme.
 fetch('flashcards.json')
 .then(response => response.json())
 .then(data => {
-    cards = data; //veriler cards değişkenine atanır.
+    cards = data; 
     updateCard();
 })
+
 .catch(error => {
     document.getElementById("card-content").textContent="kartlar yuklenemedi.";
     console.error("hata:", error)
-});
-
-
-
+})
