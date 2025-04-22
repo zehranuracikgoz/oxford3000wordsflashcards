@@ -1,9 +1,7 @@
-##flask uygulamasi.
-
 import json
 
-with open("flashcard.json", "r", encoding="utf-8") as file:
-    flascards = json.load(file)
+with open("flashcards.json", "r", encoding="utf-8") as file:
+    data = json.load(file)
 
 for card in flashcards:
-    print(f"soru: {card['question']} - cevap: {card['answer']}")
+    print(f"soru: {card['en']} - cevap: {card['tr']}")
